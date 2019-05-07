@@ -7,10 +7,9 @@ Created on 2018年5月14日
 import sys  
 from pygame.locals import *  
 import random  
-import math   
-import 是个AI就躲个飞机.wangluo as neuro_evolution   
+from . import wangluo as neuro_evolution
 import pygame   
- 
+
    
 BACKGROUND = (200, 200, 200)  
 SCREEN_SIZE = (320, 480)  
