@@ -6,8 +6,8 @@ Created on 2018年5月14日
 
 import sys  
 from pygame.locals import *  
-import random  
-from . import wangluo as neuro_evolution
+import random
+from 应用_AI躲飞机 import wangluo as neuro_evolution
 import pygame   
 
    

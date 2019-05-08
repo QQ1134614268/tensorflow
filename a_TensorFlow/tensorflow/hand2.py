@@ -1,7 +1,10 @@
 import tensorflow as tf
 from tensorflow.python import keras
 from tensorflow.python.keras import datasets, layers, optimizers
+print(optimizers.optimizer_v2)
 import os
+
+# opt = tf.keras.optimizers.SGD(learning_rate=0.1)
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 (x, y), (x_val, y_val) = datasets.mnist.load_data()

@@ -1,8 +1,5 @@
 import numpy as np
 
-
-
-
 # y = wx + b
 def compute_error_for_line_given_points(b, w, points):
     totalError = 0
@@ -13,7 +10,6 @@ def compute_error_for_line_given_points(b, w, points):
         totalError += (y - (w * x + b)) ** 2
     # average loss for each point
     return totalError / float(len(points))
-
 
 
 def step_gradient(b_current, w_current, points, learningRate):

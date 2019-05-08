@@ -125,8 +125,6 @@ def choose_shortest_safe_move(psnake, pboard):
     return best_move
 
 
-print(996)
-
 
 # 从蛇头开始，根据board中元素值，
 # 从蛇头周围4个领域点中选择最远路径
