@@ -1,14 +1,17 @@
 import numpy as np
 
+
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
+
 
 def sigmoid_derivative(x):
     return sigmoid(x) * (1 - sigmoid(x))
 
-#入参以横向展示,多个参数可以以二维传入
+
+# 入参以横向展示,多个参数可以以二维传入
 class NeuralNetwork:
-    def __init__(self, layers):  # 神经网络每层节点个数
+    def __init__(self, layers):  # """参数sizes表示每一层神经元的个数，如[2,3,1],表示第一层有2个神经元，第二层有3个神经元，第三层有1个神经元."""
         self.activation = sigmoid
         self.activation_deriv = sigmoid_derivative
 
@@ -16,9 +19,9 @@ class NeuralNetwork:
         for i in range(len(layers) - 1):  # 初始化权重
             self.weights.append(np.random.random((layers[i], layers[i + 1])))  # 产生矩阵
 
-        self.deviation = []
+        self.biases = []
         for i in range(len(layers) - 1):
-            self.deviation.append(np.random.random((layers[i + 1])))  # 产生矩阵
+            self.biases.append(np.random.random((layers[i + 1])))  # 产生矩阵
 
     def fit(self, X, y, learning_rate=0.2, epochs=10000):  # X二维的,一行代表一个实例  Y 输出值
         #  learning_rate 学习率,, epochs,避免计算量大,使用抽样数据,终止三条件之一,循环次数
@@ -32,7 +35,7 @@ class NeuralNetwork:
             outList = []  # 输出集
             outList.append(X[i])  # 入参当做第一个输出集
             for j in range(len(self.weights)):  # going forward network, for each layer
-                out = np.dot(outList[j], self.weights[j]) + self.deviation[j]
+                out = np.dot(outList[j], self.weights[j]) + self.biases[j]
                 outList.append(self.activation(out))
 
             #             out = outList[-1]
@@ -54,7 +57,7 @@ class NeuralNetwork:
                 self.weights[i] += bbb.T.dot(aaa) * learning_rate  # T  转置
 
                 # 偏向更新
-                self.deviation[i] += learning_rate * deltas[i + 1]
+                self.biases[i] += learning_rate * deltas[i + 1]
 
     def predict(self, x):
         x = np.array(x)
@@ -64,5 +67,3 @@ class NeuralNetwork:
         for l in range(0, len(self.weights)):
             a = self.activation(np.dot(a, self.weights[l]))
         return a
-
-
