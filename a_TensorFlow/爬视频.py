@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-import requests
-from contextlib import closing
-import time
-import Queue
 import hashlib
-import threading
 import os
+import threading
+import time
+from contextlib import closing
+
+import Queue
+import requests
 
 
 def download_file(url, path):
@@ -47,10 +48,10 @@ class ProgressData(object):
                 u'%s下载完成\r\n' % self.file_name)
         else:
             print(
-                u'{0}下载进度{1:.2f}{2}/{3:.2f}{4} {5:.2%} 下载速度{6:.2f}{7}/s'. \
-                    format(self.file_name, loaded, self.unit, \
-                           self.size, self.unit, progress, speed, self.unit))
-            print( '%50s' % ('/' * int((1 - progress) * 50)))
+                u'{0}下载进度{1:.2f}{2}/{3:.2f}{4} {5:.2%} 下载速度{6:.2f}{7}/s'.format(self.file_name, loaded, self.unit,
+                                                                                self.size, self.unit, progress, speed,
+                                                                                self.unit))
+            print('%50s' % ('/' * int((1 - progress) * 50)))
 
 
 queue = Queue.Queue()
