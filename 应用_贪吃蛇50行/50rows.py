@@ -1,6 +1,7 @@
-import sys, pygame
-from pygame.locals import *
 from random import randrange
+
+import pygame
+from pygame.locals import *
 
 up = lambda x: (x[0] - 1, x[1])  # 本代码中 ,,Y从左往右递增，X从上往下递增 ,, 最左上方可见像素的坐标是（0，0）
 down = lambda x: (x[0] + 1, x[1])
@@ -16,7 +17,7 @@ pygame.mouse.set_visible(0)
 screen = pygame.display.get_surface()
 screen.fill((0, 0, 0))
 times = 0.0
-s = [(5, 5), (5, 6), (5, 7)] # 横着出现,
+s = [(5, 5), (5, 6), (5, 7)]  # 横着出现,
 food = randrange(0, 30), randrange(0, 40)
 d = up
 while True:
