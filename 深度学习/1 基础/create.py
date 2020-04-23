@@ -32,4 +32,3 @@ a = tf.rank(a)
 print(a)
 a = tf.is_tensor(a)
 print(a)
-
