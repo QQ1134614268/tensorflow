@@ -1,0 +1,32 @@
+#视频
+深度学习:
+    规范化
+    激活函数    relu
+    损失函数
+    
+    保存模型
+    池化
+    
+    向前计算/计算损失/反向传播/更新参数
+模型:
+    KNN
+    CNN
+    RNN
+    NLP
+    VGG
+    VAE
+    GAN
+
+
+
+框架:
+    pytorch
+    tensorflow
+    paddlePaddle
+    caffe
+    ...
+
+类别:
+    深度学习
+    机器学习
+    知识库
