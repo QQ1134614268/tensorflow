@@ -1,10 +1,9 @@
-'''
+"""
 Created on 2018年5月14日
 
 @author: Administrator
-'''
-
-import sys  
+"""
+import sys
 from pygame.locals import *  
 import random
 from src.apply.应用_AI躲飞机 import wangluo as neuro_evolution

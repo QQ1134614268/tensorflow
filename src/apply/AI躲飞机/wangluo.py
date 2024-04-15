@@ -1,8 +1,8 @@
-'''
+"""
 Created on 2018年5月14日
 
 @author: Administrator
-'''
+"""
 import math
 import random
 
